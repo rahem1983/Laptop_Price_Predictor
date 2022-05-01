@@ -5,7 +5,7 @@ from flask import Flask, jsonify, request, render_template
 import pickle
 
 
-pipe = pickle.load(open('pipeDTR.pkl','rb'))
+pipe = pickle.load(open('pipe.pkl','rb'))
 
 app = Flask(__name__)
 
