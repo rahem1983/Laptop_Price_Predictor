@@ -16,6 +16,8 @@
         <!-- Font Awesome Icons -->
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
     <style>
 
       .start-btn{
@@ -29,6 +31,9 @@
             background: #2c698d; 
             color:white;
         }
+
+       
+       @media screen and (min-width: 600px) {
 
         .cover {
         position: fixed;
@@ -47,6 +52,7 @@
         animation: slide 0.3s ease-in-out forwards;
         animation-delay: 0.3s;
       }
+      
       @keyframes slide {
         from {
           bottom: -100vw;
@@ -54,15 +60,16 @@
         to {
           bottom: 0;
         }
-      }
-            
+      }       
 
+       }
+       
     </style>
 
 </head>
 <body>
 
-  <div class="container">
+  <div class="container w3-container w3-animate-bottom mb-5">
       
     <div class="transition">
       <div class="cover cover1"></div>
@@ -90,9 +97,7 @@
       </div>
     </div>
   </div>
-
-
-
+ 
 
   <script>
     const link = document.querySelector(".link");
