@@ -5,7 +5,7 @@ from flask import Flask, jsonify, request, render_template
 import pickle
 
 
-pipe = pickle.load(open('pipe.pkl','rb'))
+pipe = pickle.load(open('pipeLR.pkl','rb'))
 
 app = Flask(__name__)
 
@@ -13,6 +13,7 @@ app = Flask(__name__)
 def prediction():
     if request.method == 'POST':
         data = request.form.to_dict()
+        # return data
         company = data['company']
         type = data['type']
         ram = data['ram']
@@ -59,5 +60,9 @@ def prediction():
     
 
 @app.route("/")
-def index():
-    return render_template('/index.html')
+def landing():
+    return render_template('/landing.html')
+
+@app.route("/temp")
+def temp():
+    return render_template('/temp.html')
