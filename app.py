@@ -1,7 +1,7 @@
 from ast import If
 import pandas as pd
 import numpy as np
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, session, redirect
 import pickle
 
 
@@ -50,10 +50,11 @@ def prediction():
 
         query = query.reshape(1,12)
         output = int(np.exp(pipe.predict(query)[0]))
-        response = {
-            'value': output
-        }
-        return response
+        # response = {
+        #     'value': output
+        # }
+        # session['output'] = output
+        return render_template('result.html', result = output)
     else :
         return "not called"
 
@@ -66,3 +67,7 @@ def landing():
 @app.route("/temp")
 def temp():
     return render_template('/temp.html')
+
+@app.route("/result")
+def result():
+    return render_template('/result.html')
