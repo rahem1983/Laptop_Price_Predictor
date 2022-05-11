@@ -5,7 +5,7 @@ from flask import Flask, jsonify, request, render_template, session, redirect
 import pickle
 
 
-pipe = pickle.load(open('pipeLR.pkl','rb'))
+pipe = pickle.load(open('pipeRF.pkl','rb'))
 
 app = Flask(__name__)
 
