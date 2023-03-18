@@ -5,12 +5,13 @@ from flask import Flask, jsonify, request, render_template, session, redirect
 import pickle
 
 
-pipe = pickle.load(open('pipeRF.pkl','rb'))
-
 app = Flask(__name__)
 
 @app.route("/predict", methods=['POST'])
 def prediction():
+
+    pipe = pickle.load(open('pipeSVm.pkl','rb'))
+
     if request.method == 'POST':
         data = request.form.to_dict()
         # return data
@@ -57,9 +58,6 @@ def prediction():
         return render_template('result.html', result = output)
     else :
         return "not called"
-
-    
-
 @app.route("/")
 def landing():
     return render_template('/landing.html')
